@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project UI - Zoom 40%</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-content {
+            width: 100%;
+            max-width: 450px;
+            border: 2px solid #000;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .titel {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .text-label {
+            font-size: 18px;
+            margin: 15px 0 10px 0;
+        }
+
+        /* PDF表示エリア */
+        .pdf-container {
+            width: 100%;
+            background-color: #1a1512;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            /* スクロールを禁止する設定 */
+            overflow: hidden; 
+            touch-action: none; /* スマホでのタッチ操作によるスクロールを抑制 */
+        }
+
+        .map-box { aspect-ratio: 1.5 / 1.2; }
+        .test-box { aspect-ratio: 0.65 / 1; }
+
+        embed, iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            /* iframe自体のスクロールバーを非表示（ブラウザ依存） */
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-content">
+        <div class="titel">TITEL</div>
+        
+        <div class="pdf-container map-box">
+            <iframe src="images/map.pdf#zoom=30&scrollbar=0&navpanes=0" scrolling="no"></iframe>
+        </div>
+
+        <div class="text-label">text_1</div>
+
+        <div class="pdf-container test-box">
+            <iframe src="images/test.pdf#zoom40&scrollbar=0&navpanes=0" scrolling="no"></iframe>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
